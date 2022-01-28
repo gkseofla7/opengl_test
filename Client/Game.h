@@ -3,7 +3,10 @@ class Game
 {
 public:
 
-	void Init();
+	void Init(GLFWwindow* window);
 	void Update();
+	
+
+
 };
 
