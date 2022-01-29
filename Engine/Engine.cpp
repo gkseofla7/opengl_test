@@ -7,37 +7,35 @@ void Engine::Init(GLFWwindow* _window)
 	window = _window;
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return;
+    }
+    _cb = make_shared<ConstantBuffer>();
+    _cb->Init(sizeof(Transform));
 }
 
-void Engine::Update()
+
+
+void Engine::Render()
+{
+}
+
+void Engine::RenderBegin()
 {
     processInput(window);
-
-    // render
-    // ------
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    Render();
+}
+
+void Engine::RenderEnd()
+{
 
     // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
     // -------------------------------------------------------------------------------
     glfwSwapBuffers(window);
     glfwPollEvents();
-}
-
-void Engine::Render()
-{
-    RenderBegin();
-
-    RenderEnd();
-}
-
-void Engine::RenderBegin()
-{
-}
-
-void Engine::RenderEnd()
-{
 }
 
 

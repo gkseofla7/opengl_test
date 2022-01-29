@@ -17,12 +17,33 @@ void Game::Init(GLFWwindow* _window)
 	vec[1].color = Vec4(0.f, 1.0f, 0.f, 1.f);
 	vec[2].pos = Vec3(-0.5f, -0.5f, 0.5f);
 	vec[2].color = Vec4(0.f, 0.f, 1.f, 1.f);
-	mesh->Init(vec);
+	
+	shader->Init("simple.vshader", "simple.fshader");
+	mesh->Init(vec, shader);
 }
 
 void Game::Update()
 {
-    GEngine->Update();
+	GEngine->RenderBegin();
+
+	shader->use();
+
+	{
+		Transform t;
+		t.offset = Vec4(0.75f, 0.f, 0.f, 0.f);
+		mesh->SetTransform(t);
+		mesh->Render();
+	}
+
+	{
+		Transform t;
+		t.offset = Vec4(0.f, 0.75f, 0.f, 0.f);
+		mesh->SetTransform(t);
+		mesh->SetShader(shader);
+		mesh->Render();
+	}
+
+	GEngine->RenderEnd();
 }
 
 

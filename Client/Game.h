@@ -5,8 +5,5 @@ public:
 
 	void Init(GLFWwindow* window);
 	void Update();
-	
-
-
 };
 

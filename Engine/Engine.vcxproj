@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ConstantBuffer.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="EnginePch.h" />
     <ClInclude Include="Mesh.h" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConstantBuffer.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="EnginePch.cpp" />
     <ClCompile Include="Mesh.cpp" />

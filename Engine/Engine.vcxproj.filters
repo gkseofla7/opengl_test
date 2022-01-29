@@ -10,6 +10,9 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{2238516a-d1f6-4a2e-b54c-59625db2fc83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{09051593-7d10-464b-926d-069a9d76f799}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -27,6 +30,9 @@
     <ClInclude Include="Shader.h">
       <Filter>Resource</Filter>
     </ClInclude>
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -43,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantBuffer.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
